@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="igruca" id="002">
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="1"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="V-NECH BASIC SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="100"/>
+           <column name="PRODUCT_STOCK" valueNumeric="4"/>
+        </insert>
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="2"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="CONTRASTING FABRIC T-SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="50"/>
+           <column name="PRODUCT_STOCK" valueNumeric="35"/>
+        </insert>
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="3"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="RAISED PRINT T-SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="80"/>
+           <column name="PRODUCT_STOCK" valueNumeric="20"/>
+        </insert>
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="4"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="PLEATED T-SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="3"/>
+           <column name="PRODUCT_STOCK" valueNumeric="25"/>
+        </insert>
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="5"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="CONTRASTING LACE T-SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="650"/>
+           <column name="PRODUCT_STOCK" valueNumeric="0"/>
+        </insert>
+        <insert tableName="PRODUCTS">
+           <column name="ID" valueNumeric="6"/>
+           <column name="BRAND_ID" valueNumeric="1"/>
+           <column name="PRODUCT_NAME" value="SLOGAN T-SHIRT"/>
+           <column name="PRODUCT_SALES" valueNumeric="20"/>
+           <column name="PRODUCT_STOCK" valueNumeric="9"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

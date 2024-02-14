@@ -1,0 +1,91 @@
+openapi: "3.0.3"
+info:
+  version: 1.0.0
+  title: Product Sorting API
+  description: A sample API for sorting Products depending on parameters
+  
+paths:
+  /product/sort:
+    post: 
+      summary: sort a list of products depending on some metrics and weights provided
+      requestBody: 
+        description: the list of the products with the needed paremeters, and a list of weights to consider   
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/productSortRequest"
+      responses:
+        200:
+          description: the list with the products sorted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/product"
+        500:
+          description: an error occurred
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+   
+components:
+  schemas:
+    productSortRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/product"
+        weights:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/weights"  
+             
+    product:
+      type: object
+      properties:
+        productId:
+         type: integer
+         format: int64
+         example: 123456
+        productName:
+          type: string
+          example: camiseta de estampado de Kenshin
+          nullable: false
+        productParams:
+          type: object
+          nullable: false
+          additionalProperties:
+            type: string
+            nullable: false
+ 
+    # Type string in the param value was decided that way to let non numeric values as input.
+    # But it is risky and we will need to validate and handle possible errors.
+    weights:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+        weight:
+          type: integer
+          format: int64
+          nullable: false
+        
+    error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+          example: 1234
+        message:
+          type: string
+          example: description of the error
+ 
